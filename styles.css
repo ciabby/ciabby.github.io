@@ -357,10 +357,30 @@ footer::after
     opacity: 70%;
     background-color: #8b4e4e;
 }
+#tornaalmenuingioco
+{
+    align-items: center;
+    position: absolute;
+    font-family: "press Start 2P",system-ui;
+    height: 7%;
+    width: 150px;
+    left:45.5%;
+    top:3%;
+    border-radius: 40% 20% 40% 20% ;
+    opacity: 70%;
+    background-color: #8b4e4e;
+}
 #gioca
 {
     font-family: "press Start 2P",system-ui; 
     position: absolute; 
     top:-10%;
     left: 9%;
+}
+#x
+{
+position: absolute;
+width: 12%;
+left: 74%;
+top: 0%;
 }
