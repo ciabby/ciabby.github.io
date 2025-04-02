@@ -1,0 +1,366 @@
+body
+{
+    background: linear-gradient(135deg,#2e424d,#5b8291)
+}
+#cannone1
+{
+    position: absolute;
+    top:89%;
+    width: 8%;
+}
+#cannone2
+{
+    position: absolute;
+    top:89%;
+    left: 92%;
+    width: 8%;
+    filter:invert();
+    transform: scaleX(-1);
+}   
+#separa
+{
+    color:white;
+    background-color: white;
+    top:20%;
+    position: absolute;
+    height: 2%;
+    width: 100%;
+    transform:rotate(90deg);
+}
+.amico
+{
+    position: absolute;
+    top:3%;
+    right:55%;
+    border: solid;
+    border-color:white;
+    color:white;
+}
+.avversario
+{
+    border: solid;
+    border-color:#000000;
+    position: absolute;
+    top:3%;
+    left:56%;
+}
+.posizionamento
+{
+    border: solid;
+    border-color:#000000;
+    position: absolute;
+    top:6%;
+    left:5%;
+}
+.poss_caselle
+{
+    width: 50px;
+    height: 50px;
+}
+.avversario_caselle
+{
+    width: 50px;
+    height: 50px;
+}
+.amico_caselle
+{
+    width: 50px;
+    height: 50px;
+}
+.barralaterale
+{
+    position:fixed;
+    top: 24px;
+    left: 24px;
+    bottom: 304px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 260px;
+    border-radius: 16px;
+    padding: 0 16px;
+    background: 
+        rgb(0 0 0 / 32%);
+    backdrop-filter:
+        blur(30px);
+    transition: width 0.4s;
+}
+.barralaterale header
+{
+    display: flex;
+    align-items: center;
+    height: 72px;
+}
+.barralaterale header img
+{
+    height: 40px;
+}
+.barralaterale input
+{
+    scale: 0;
+    position: absolute;
+}
+.barralaterale 
+{
+    input#settings:checked
+    ~div
+    {
+        height: 150px;
+    }
+}
+.barralaterale 
+{
+    input#create:checked
+    ~div
+    {
+        height: 200px;
+    }
+}
+.barralaterale 
+{
+    input#profile:checked
+    ~div
+    {
+        height: 100px;
+    }
+}
+.barralaterale  :is(button,label)
+{
+    position: relative;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height:50px;
+    width:100%;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0 16px;
+    color:
+        rgb(255 255 255/95%);
+}
+.barralaterale 
+{
+    label p: nth-child(2)
+        {
+            flex: 1 1 auto;    
+        }
+}
+.barralaterale 
+{
+    input:checked ~label
+        {
+            background: #1960f3;
+        }
+}
+.barralaterale label i
+{
+    transition: 0.3s;
+}
+.barralaterale 
+{
+    input:not(:checked) ~ label:hover
+        {
+            background: 
+                rgb(0 0 0 /15%);
+        }
+}
+.barralaterale ul
+{
+    display: grid;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 97%;
+}
+.sub-menu
+{
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s;
+}
+.sub-menu ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+}
+.sub-menu button
+{
+    padding-left: 52px;
+}
+.sub-menu button::before
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    translate: 0 -50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: 
+        rgb(255 255 255/35%);
+}
+footer
+{
+    position: fixed;
+    height: 11%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 100px;
+    background: 
+        rgb(0 0 0 /15%);
+    display: grid;
+    place-content: center;
+    grid-template-areas: 
+        "logo socials"
+        "link links";
+    grid-auto-columns: 
+        repeat(2,1fr);
+    color: #f9f9f9;
+}
+footer::after
+{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    background: 
+        rgb(0 0 0 /10%);
+}
+.logo
+{
+    grid-area: logo;
+}
+.social
+{
+    grid-area: social;
+    display: flex;
+    justify-content: 
+        flex-end;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+}
+.link
+{
+    grid-area: link;
+    display: grid;
+    grid-template-columns: 
+        repeat(4,1fr);
+    padding: 40px 0 50px;
+}
+.link h2
+{
+    color: 
+        rgb(255 255 255/60%);
+}
+.link ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0.8;
+}
+.link address
+{
+    font-style: normal;
+    line-height: 1.5;
+    font-size: 12px;
+}
+@media (width <500px)
+{
+    .link
+    {
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px 0;
+        padding: 40px 0 30px;
+    }
+}
+@media (width<360px)
+{
+    footer
+    {
+        grid-template-areas: 
+            "logo" "link" "social";
+        grid-template-columns: 1fr;
+    }
+    .social
+    {
+        justify-content: flex-start;
+        padding-bottom:20px;
+    }
+}
+#isocial
+{
+    position: absolute;
+    left: 70%;
+}
+
+#cosahocreato
+{
+    position: absolute;
+    left: 45%;
+}
+#servizi
+{
+    position: absolute;
+    left: 20%;
+}
+#info
+{
+    position: absolute;
+    top: 5%;
+    left: 42%;
+    width: 34%;
+    height: 51%;
+    align-content: center;
+    font-size: 30px;
+    font-family: "Press Start 2P", system-ui;
+    font-style: italic;
+} 
+#ingame
+{
+    align-items: center;
+    position: absolute;
+    font-family: "press Start 2P",system-ui;
+    height: 5%;
+    width: 150px;
+    left:82%;
+    top:88%;
+    border-radius: 40% 20% 40% 20% ;
+    opacity: 70%;
+    background-color: #577273;
+}
+#tornaalmenu
+{
+    align-items: center;
+    position: absolute;
+    font-family: "press Start 2P",system-ui;
+    height: 7%;
+    width: 150px;
+    left:90%;
+    top:3%;
+    border-radius: 40% 20% 40% 20% ;
+    opacity: 70%;
+    background-color: #8b4e4e;
+}
+#gioca
+{
+    font-family: "press Start 2P",system-ui; 
+    position: absolute; 
+    top:-10%;
+    left: 9%;
+}

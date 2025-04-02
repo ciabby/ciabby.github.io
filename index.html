@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Battaglia Navale</title>
+        <link rel="website icon" type="png" href="pngegg%20(1).png">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <aside class="barralaterale">
+            <header>
+                <img src="pngegg%20(1).png" width="70px" style="filter: invert()">
+                <p style="font-size: 26px; color: white; position: absolute;left:33%;"> Battaglia Navale</p>
+            </header>
+            <ul>
+                <li>
+                    <div class="sub-menu"></div>
+                    <ul>
+                        <li>
+                    <input type="radio" id="giocaamico" name="barralaterale">
+                    <label for="giocaamico">
+                        <i class="ai-giocaamico">
+                            <p href="paginadigioco.html">Gioca Con Un Amico: <img src="amici.png" width="50px" style="position: absolute; top: 0%;filter: invert()"></p>
+                        </i>
+                    </label>
+                </li>
+                        <li>
+                            <a href="posizionamento.html">
+                                <button type="button" style="color:black">Gioca Ora!</button>
+                            </a>
+                        </li>
+                        <input type="radio" id="giocabot" name="barralaterale">
+                          <label for="giocabot">
+                            <i class="ai-giocabot">
+                            <p href="paginadigioco.html">Gioca Con Bot: <img src="https://www.pngarts.com/files/2/Personal-Computer-PNG-Image-Background.png" width="50px" style="position:absolute; top: 0%; filter:invert(); left:46%;"></p>
+                        </i>
+                        <i class="ai-chevron-down-small"></i>
+                    </label>
+                        <li>
+                            <a href="posizionamento.html">
+                                <button type="button" style="color: black">Gioca Ora!</button>
+                            </a>
+                        </li>
+                        <li>
+                        <input type="radio" id="informazioni" name="barralaterale">
+                            <label for="informazioni">
+                        <i class="ai-informazioni">
+                            <p>Info Sul Gioco: <img src="pngwing.com.png" width="35px" style="position: absolute; filter:invert(); left: 41%;top:13%;"></p>
+                        </i>
+                    </label>
+                        </li>
+                        <li>
+                            <a onclick="informazioni()">
+                                <button type="button" style="color: black"><u>Informazioni</u></button>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <footer>
+            <img class="logo" src="pngegg%20(1).png" width="45px">
+            <div class="social">
+                <a class="fa-brand fa-x-insta"></a>
+            </div>
+            <div class="link">
+                <ul id="servizi">
+                    <li>
+                        <h2>Servizi</h2>
+                    </li>
+                    <li>
+                        <a onclick="chisono()">Chi Sono</a>
+                    </li>
+                    <li>
+                        <a onclick="dadovevengo()">Da dove vengo</a>
+                    </li>
+                </ul>
+                <ul id="cosahocreato">
+                    <li>
+                        <h2 >Cosa Ho Creato</h2>
+                    </li>
+                    <li>
+                        <a onclick="ideadigioco()">Idea Di Gioco</a>
+                    </li>
+                    <li>
+                        <a onclick="comecisonoarrivato()">Come Ci Sono Arrivato</a>
+                    </li>
+                </ul>
+                <ul id="isocial">
+                    <li>
+                        <h2>Social</h2>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/manu_longhi7/" style="color: white; position: absolute; top:115%;">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+            <img src="pngegg%20(1).png" width="110px" style="transform: scaleX(-1); position: absolute;left: 92.5%; top: 62%;">
+        <img src="pngegg%20(1).png" width="110px" style="position: absolute;left: 0; top: 62%;">
+        <div id="info" >
+        
+        </div>
+    </body>
+</html>

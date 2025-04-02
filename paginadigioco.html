@@ -1,0 +1,295 @@
+<!-- 
+
+pagina dove si giochera contro gli amici / bot 
+
+
+//eseguire un drag and drop per rilasciare le barche nel posizionamento
+-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Battaglia Navale</title>
+        <link rel="website icon" type="png" href="pngegg%20(1).png">
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <img src="pngegg%20(1).png" id="cannone1">
+        <img src="pngegg%20(1).png" id="cannone2">
+        <hr id="separa">
+            <table border=1; class="amico" >
+        <tr>
+            <th class="amico_caselle">A</th>
+            <th class="amico_caselle">B</th>
+            <th class="amico_caselle">C</th>
+            <th class="amico_caselle">D</th>
+            <th class="amico_caselle">E</th>
+            <th class="amico_caselle">F</th>
+            <th class="amico_caselle">G</th>
+            <th class="amico_caselle">H</th>
+            <th class="amico_caselle">I</th>
+            <th class="amico_caselle">J</th>
+        </tr>
+        <tr>
+            <th class="amico_caselle">1</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">2</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>      
+        </tr>
+            <tr>
+            <th class="amico_caselle">3</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">4</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">5</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">6</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">7</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">8</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">9</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="amico_caselle">10</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr> 
+        </table>
+        <table border=1; class="avversario" >
+        <tr>
+            <th class="avversario_caselle" >A</th>
+            <th class="avversario_caselle" >B</th>
+            <th class="avversario_caselle" >C</th>
+            <th class="avversario_caselle" >D</th>
+            <th class="avversario_caselle" >E</th>
+            <th class="avversario_caselle" >F</th>
+            <th class="avversario_caselle" >G</th>
+            <th class="avversario_caselle" >H</th>
+            <th class="avversario_caselle" >I</th>
+            <th class="avversario_caselle" >J</th>
+        </tr>
+        <tr>
+            <th class="avversario_caselle">1</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">2</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">3</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">4</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">5</th>
+            <th></th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">6</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">7</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">8</th>
+            <th></th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">9</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+            <tr>
+            <th class="avversario_caselle">10</th>
+            <th></th>
+            <th></th>
+                <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </table>
+        <a href="index.html">
+        <button id="tornaalmenu"><h3 id="gioca">Torna al Menu</h3></button>
+        </a>
+    </body>
+</html>
+    
