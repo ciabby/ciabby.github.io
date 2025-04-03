@@ -70,13 +70,13 @@ body
 .barralaterale
 {
     position:fixed;
-    top: 24px;
-    left: 24px;
-    bottom: 304px;
+    top: 2%;
+    left: 2%;
+    bottom: 40%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 260px;
+    gap: 2%;
+    width: 20%;
     border-radius: 16px;
     padding: 0 16px;
     background: 
@@ -89,11 +89,11 @@ body
 {
     display: flex;
     align-items: center;
-    height: 72px;
+    height: 20%;
 }
 .barralaterale header img
 {
-    height: 40px;
+    height: 70%;
 }
 .barralaterale input
 {
@@ -105,7 +105,7 @@ body
     input#settings:checked
     ~div
     {
-        height: 150px;
+        height: 15%;
     }
 }
 .barralaterale 
@@ -113,7 +113,7 @@ body
     input#create:checked
     ~div
     {
-        height: 200px;
+        height: 20%;
     }
 }
 .barralaterale 
@@ -121,14 +121,14 @@ body
     input#profile:checked
     ~div
     {
-        height: 100px;
+        height: 2%;
     }
 }
 .barralaterale  :is(button,label)
 {
     position: relative;
     display: flex;
-    gap: 16px;
+    gap: 16%;
     align-items: center;
     height:50px;
     width:100%;
