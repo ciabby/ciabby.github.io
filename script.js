@@ -23,7 +23,7 @@ function informazioni()
         document.getElementById("info").style.border="5px solid black";
         document.getElementById("info").style.borderRadius="20% 5% 20% 5%";
         document.getElementById("info").style.color="black";
-        document.getElementById("info").textContent="il gioco consiste nel riuscire a abbattere tutte le barche avversarie riuscendo a trovarle tramite la posizione delle caselle";
+        document.getElementById("info").textContent="il gioco consiste nel riuscire ad abbattere tutte le barche avversarie riuscendo a trovarle tramite la posizione delle caselle";
         document.getElementById(x).style.display="flex";
         var oImg = document.createElement("img");
         oImg.setAttribute('src', 'x.png');
