@@ -29,7 +29,15 @@ body
 }
 .amico
 {
+    background-color: #e9b080;
     position: absolute;
+    color: white;
+    text-shadow:
+        0px 0px 0px #000000,
+        0px 5px 5px #000000,
+        5px 5px 5px #000000,
+        5px 5px 5px #000000;
+    top:6%;
     top:3%;
     right:55%;
     border: solid;
@@ -40,7 +48,15 @@ body
 {
     border: solid;
     border-color:#000000;
+    background-color: #e9b080;
     position: absolute;
+    color: white;
+    text-shadow:
+        0px 0px 0px #000000,
+        0px 5px 5px #000000,
+        5px 5px 5px #000000,
+        5px 5px 5px #000000;
+    top:6%;
     top:3%;
     left:56%;
 }
@@ -48,7 +64,14 @@ body
 {
     border: solid;
     border-color:#000000;
+    background-color: #e9b080;
     position: absolute;
+    color: white;
+    text-shadow:
+        0px 0px 0px #000000,
+        0px 5px 5px #000000,
+        5px 5px 5px #000000,
+        5px 5px 5px #000000;
     top:6%;
     left:5%;
 }
@@ -387,4 +410,37 @@ position: absolute;
 width: 12%;
 left: 74%;
 top: 0%;
+}
+#barcheadisp
+{
+    position: absolute;
+    left: 61%;
+    top: 29%;
+    border: solid black;
+}
+th
+{
+    border: solid;
+    border-color: black;
+}
+#barcadadue
+{
+    height: 7%;
+}
+#barcadatre1
+{
+    height: 5%;
+}
+#barcadatre2
+{
+    height: 5%;
+}
+#barcadaquattro
+{
+    height: 7%;
+}
+#barcadacinque
+{
+    height: 8%;
+    
 }
