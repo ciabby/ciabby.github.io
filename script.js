@@ -1,4 +1,5 @@
 let contatore=parseInt(0);
+let BarchePiazzate=parseInt(0);
 function ideadigioco()
 {
     alert("Volevamo creare un gioco abbastanza tranquillo, in grado di far divertire tutti i giocatori quindi che dire....");
@@ -36,4 +37,21 @@ function informazioni()
        document.getElementById("info").style.display="none";
     }
     contatore+=1;
+}
+
+
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+    BarchePiazzate+=1;
+    alert(BarchePiazzate);
 }

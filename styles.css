@@ -256,7 +256,7 @@ footer::after
     top: 0;
     left: 0;
     right: 0;
-    height: 68px;
+    height: 62px;
     background: 
         rgb(0 0 0 /10%);
 }
@@ -396,7 +396,8 @@ footer::after
     opacity: 70%;
     background-color: #8b4e4e;
 }
-#gioca
+.
+.gioca
 {
     font-family: "press Start 2P",system-ui; 
     position: absolute; 
