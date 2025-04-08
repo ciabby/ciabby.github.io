@@ -162,9 +162,13 @@
         <a href="index.html">
         <button id="tornaalmenu"><h3 class="gioca">Torna al Menu</h3></button>
         </a>
-        <div style="position: absolute; left: 53%; top: 18%; width: 25;">
-        <p style="font-family: 'press Start 2P',system-ui; height: 10%;">Scegli la Barca da posizionare </p>
-        <p style="font-family: 'press Start 2P',system-ui; height: 15%;">e trascinala in campo per posizionarla</p>
+        <div style="position: absolute; left: 53%; top: 15%; width: 15;">
+            <p style="font-family: 'press Start 2P',system-ui; height: 10%;">Per scegliere l'orientamento usare la rotellina </p>
+            <p style="font-family: 'press Start 2P',system-ui; height: 10%;">Prima di prendere la barca </p>
+        </div>
+        <div style="position: absolute; left: 53%; top: 61%; width: 10;">
+            <p style="font-family: 'press Start 2P',system-ui; height: 10%;">Scegli la Barca da posizionare </p>
+            <p style="font-family: 'press Start 2P',system-ui; height: 15%;">e trascinala in campo per posizionarla</p>
         </div>
         <table id="barcheadisp">
             <tr>
@@ -173,23 +177,23 @@
             </tr>
             <tr>
                 <th>2 Caselle</th>
-                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filedue.png" id="barcadadue" draggable="true" ondragstart="dragstartHandler(event)"></th>
+                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filedue.png" id="barcadadue" data-length="2" draggable="true" ondragstart="dragstartHandler(event)"></th>
             </tr>
             <tr>
                 <th>3 Caselle</th>
-                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filequattro.png" id="barcadatre1" draggable="true" ondragstart="dragstartHandler(event)"></th>
+                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filequattro.png" id="barcadatre1" data-length="3" draggable="true" ondragstart="dragstartHandler(event)"></th>
             </tr>
             <tr>
                 <th>3 Caselle</th>
-                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filetre.png" id="barcadatre2" draggable="true" ondragstart="dragstartHandler(event)"></th>
+                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filetre.png" id="barcadatre2" data-length="3" draggable="true" ondragstart="dragstartHandler(event)"></th>
             </tr>
             <tr>
                 <th>4 Caselle</th>
-                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filecinque.png" id="barcadaquattro" draggable="true" ondragstart="dragstartHandler(event)"></th>
+                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="filecinque.png" data-length="4" id="barcadaquattro" draggable="true" ondragstart="dragstartHandler(event)"></th>
             </tr>
             <tr>
                 <th>5 Caselle</th>
-                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="file.png" id="barcadacinque" draggable="true" ondragstart="dragstartHandler(event)"></th>
+                <th ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"><img src="file.png" id="barcadacinque" data-length="5" draggable="true" ondragstart="dragstartHandler(event)"></th>
             </tr>
         </table>
     </body>
