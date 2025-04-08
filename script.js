@@ -60,14 +60,12 @@ function dropHandler(ev) {
     const rowIndex = Array.from(table.children).indexOf(row); // 1-10
     const cellIndex = Array.from(row.children).indexOf(cell); // 1-10
 
-    // Controllo se c'è abbastanza spazio in base all'orientamento
     if (orientamento === "orizzontale") {
         if (cellIndex + length - 1 > 10) {
             alert("Non c'è abbastanza spazio per posizionare la barca orizzontalmente!");
             return;
         }
 
-        // Verifica che tutte le celle orizzontali siano vuote
         for (let i = 0; i < length; i++) {
             const targetCell = table.children[rowIndex].children[cellIndex + i];
             if (targetCell.children.length > 0) {
@@ -76,7 +74,6 @@ function dropHandler(ev) {
             }
         }
 
-        // Posiziona la barca orizzontale
         for (let i = 0; i < length; i++) {
             const targetCell = table.children[rowIndex].children[cellIndex + i];
             const boatPart = boat.cloneNode(true);
@@ -87,7 +84,7 @@ function dropHandler(ev) {
             boatPart.id = boatId + "_part" + i;
             targetCell.appendChild(boatPart);
             targetCell.setAttribute("data-part", boatId);
-            targetCell.classList.add("occupate");  // Aggiungi classe "occupate"
+            targetCell.classList.add("occupate");
         }
 
     } else if (orientamento === "verticale") {
@@ -96,7 +93,6 @@ function dropHandler(ev) {
             return;
         }
 
-        // Verifica che tutte le celle verticali siano vuote
         for (let i = 0; i < length; i++) {
             const targetRow = table.children[rowIndex + i];
             const targetCell = targetRow.children[cellIndex];
@@ -106,7 +102,6 @@ function dropHandler(ev) {
             }
         }
 
-        // Posiziona la barca verticale
         for (let i = 0; i < length; i++) {
             const targetRow = table.children[rowIndex + i];
             const targetCell = targetRow.children[cellIndex];
@@ -118,18 +113,15 @@ function dropHandler(ev) {
             boatPart.id = boatId + "_part" + i;
             targetCell.appendChild(boatPart);
             targetCell.setAttribute("data-part", boatId);
-            targetCell.classList.add("occupate");  // Aggiungi classe "occupate"
+            targetCell.classList.add("occupate");
         }
     }
 
-    // Rimuoviamo la barca originale dalla lista delle barche disponibili
     boat.style.display = "none";
-
     BarchePiazzate += 1;
     alert("Barche piazzate: " + BarchePiazzate);
 }
 
-// ——— Cambia orientamento con la rotella del mouse ———
 document.addEventListener("wheel", (event) => {
     if (event.deltaY > 0) {
         orientamento = "orizzontale";
@@ -139,14 +131,90 @@ document.addEventListener("wheel", (event) => {
     console.log("Orientamento attuale:", orientamento);
 });
 
-// Funzione per inizializzare le celle libere
 function inizializzaCelle() {
     const celle = document.querySelectorAll("td");
     celle.forEach(cell => {
-        cell.classList.add("libere");  // Aggiungi la classe "libere" a tutte le celle vuote
-        cell.classList.remove("occupate");  // Rimuovi la classe "occupate" se presente
+        cell.classList.add("libere");
+        cell.classList.remove("occupate");
     });
 }
 
-// Chiama la funzione inizializzaCelle al caricamento della pagina
-document.addEventListener("DOMContentLoaded", inizializzaCelle);
+function Campo() {
+    if (BarchePiazzate === 5) {
+        document.getElementById("ingame").disabled = false;
+        document.getElementById("ingame").onclick = function () {
+            window.location.href = "paginadigioco.html";
+        };
+    } else {
+        document.getElementById("ingame").disabled = true;
+        alert("Devi posizionare tutte le barche prima di poter giocare");
+    }
+}
+
+// ——— NUOVA FUNZIONE: Controllo celle cliccate ———
+function controllaCellaCliccata(event) {
+    const cella = event.target.closest('td,th');
+    if (!cella) return;
+
+    const riga = cella.parentElement;
+    const tabella = riga.parentElement;
+    const rigaIndex = Array.from(tabella.children).indexOf(riga);
+    const colonnaIndex = Array.from(riga.children).indexOf(cella);
+    let colonne;
+    switch(colonnaIndex)
+        {
+            default:
+                colonne=" ";
+                break;
+            case 1:
+                colonne="a";
+                break;
+            case 2:
+                colonne="b";
+                break;
+            case 3:
+                colonne="c";
+                break;
+            case 4:
+                colonne="d";
+                break;
+            case 5:
+                colonne="e";
+                break;
+            case 6:
+                colonne="f";
+                break;
+            case 7:
+                colonne="g";
+                break;
+            case 8:
+                colonne="h";
+                break;
+            case 9:
+                colonne="i";
+                break;
+            case 10:
+                colonne="j";
+                break;
+        }
+
+    const posizione = `(${rigaIndex }, ${colonne})`;
+
+    if (cella.children.length > 0 || cella.classList.contains("occupate")) {
+        alert(`la casella ${posizione} è occupata.`);
+    } else {
+        alert(`la casella ${posizione} è vuota.`);
+    }
+}
+
+// ——— Inizializzazione al caricamento della pagina ———
+document.addEventListener("DOMContentLoaded", function () {
+    inizializzaCelle();
+    Campo();
+
+    // Assegna l'evento di click a tutte le celle
+    document.querySelectorAll("td,th").forEach(td => {
+        td.addEventListener("click", controllaCellaCliccata);
+    });
+});
+    
