@@ -1,7 +1,22 @@
 let contatore = parseInt(0);
 let BarchePiazzate = parseInt(0);
 let orientamento = "orizzontale"; // Imposta il valore iniziale dell'orientamento
-
+function Campo() 
+{
+    if (BarchePiazzate < 5) {
+       document.getElementById("ingame").disabled = true;
+        if(BarchePiazzate==0)
+            {
+                alert("Devi posizionare tutte le barche prima di poter giocare");
+            }
+    } else if(BarchePiazzate == 5 ){
+        
+        document.getElementById("ingame").disabled = false;
+        document.getElementById("ingame").onclick = function () {
+        window.location.href = "paginadigioco.html";
+            };
+    }
+}
 function ideadigioco() {
     alert("Volevamo creare un gioco abbastanza tranquillo, in grado di far divertire tutti i giocatori quindi che dire....");
     alert("Buon divertimento");
@@ -84,7 +99,7 @@ function dropHandler(ev) {
             boatPart.id = boatId + "_part" + i;
             targetCell.appendChild(boatPart);
             targetCell.setAttribute("data-part", boatId);
-            targetCell.classList.add("occupate");
+            targetCell.classList.add("occupateGiocatore");
         }
 
     } else if (orientamento === "verticale") {
@@ -113,12 +128,13 @@ function dropHandler(ev) {
             boatPart.id = boatId + "_part" + i;
             targetCell.appendChild(boatPart);
             targetCell.setAttribute("data-part", boatId);
-            targetCell.classList.add("occupate");
+            targetCell.classList.add("occupateGiocatore");
         }
     }
 
     boat.style.display = "none";
     BarchePiazzate += 1;
+    Campo();
     alert("Barche piazzate: " + BarchePiazzate);
 }
 
@@ -134,22 +150,11 @@ document.addEventListener("wheel", (event) => {
 function inizializzaCelle() {
     const celle = document.querySelectorAll("td");
     celle.forEach(cell => {
-        cell.classList.add("libere");
-        cell.classList.remove("occupate");
+        cell.classList.add("libereGiocatore");
+        cell.classList.remove("occupateGiocatore");
     });
 }
 
-function Campo() {
-    if (BarchePiazzate === 5) {
-        document.getElementById("ingame").disabled = false;
-        document.getElementById("ingame").onclick = function () {
-            window.location.href = "paginadigioco.html";
-        };
-    } else {
-        document.getElementById("ingame").disabled = true;
-        alert("Devi posizionare tutte le barche prima di poter giocare");
-    }
-}
 
 // ——— NUOVA FUNZIONE: Controllo celle cliccate ———
 function controllaCellaCliccata(event) {
@@ -200,7 +205,7 @@ function controllaCellaCliccata(event) {
 
     const posizione = `(${rigaIndex }, ${colonne})`;
 
-    if (cella.children.length > 0 || cella.classList.contains("occupate")) {
+    if (cella.children.length > 0 || cella.classList.contains("occupateGiocatore")) {
         alert(`la casella ${posizione} è occupata.`);
     } else {
         alert(`la casella ${posizione} è vuota.`);
@@ -210,7 +215,6 @@ function controllaCellaCliccata(event) {
 // ——— Inizializzazione al caricamento della pagina ———
 document.addEventListener("DOMContentLoaded", function () {
     inizializzaCelle();
-    Campo();
 
     // Assegna l'evento di click a tutte le celle
     document.querySelectorAll("td,th").forEach(td => {
