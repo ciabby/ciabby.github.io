@@ -144,9 +144,8 @@ document.addEventListener("wheel", (event) => {
     } else if (event.deltaY < 0) {
         orientamento = "verticale";
     }
-    console.log("Orientamento attuale:", orientamento);
+    alert("Orientamento attuale: "+orientamento);
 });
-
 function inizializzaCelle() {
     const celle = document.querySelectorAll("td");
     celle.forEach(cell => {
