@@ -128,7 +128,7 @@ function dropHandler(ev) {
             boatPart.id = boatId + "_part" + i;
             targetCell.appendChild(boatPart);
             targetCell.setAttribute("data-part", boatId);
-            targetCell.classList.add("occupateGiocatore");
+            targetCell.classList.add("occupateGiocatore1");
         }
     }
 
@@ -149,8 +149,8 @@ document.addEventListener("wheel", (event) => {
 function inizializzaCelle() {
     const celle = document.querySelectorAll("td");
     celle.forEach(cell => {
-        cell.classList.add("libereGiocatore");
-        cell.classList.remove("occupateGiocatore");
+        cell.classList.add("libereGiocatore1");
+        cell.classList.remove("occupateGiocatore1");
     });
 }
 
@@ -204,7 +204,7 @@ function controllaCellaCliccata(event) {
 
     const posizione = `(${rigaIndex }, ${colonne})`;
 
-    if (cella.children.length > 0 || cella.classList.contains("occupateGiocatore")) {
+    if (cella.children.length > 0 || cella.classList.contains("occupateGiocatore1")) {
         alert(`la casella ${posizione} è occupata.`);
     } else {
         alert(`la casella ${posizione} è vuota.`);
