@@ -1,15 +1,18 @@
 let contatore = parseInt(0);
-let BarchePiazzate = parseInt(0);
+let giocacon = parseInt(2); //variabile usata per capire con chi gioca
+let chipiazza = parseInt(0); //variabile usata per decidere chi piazza
+let barchePiazzateGiocatore1 = parseInt(0);
+let barchePiazzateGiocatore2 = parseInt(0);
 let orientamento = "orizzontale"; // Imposta il valore iniziale dell'orientamento
 function Campo() 
 {
-    if (BarchePiazzate < 5) {
+    if (barchePiazzateGiocatore1 < 5) {
        document.getElementById("ingame").disabled = true;
-        if(BarchePiazzate==0)
+        if(barchePiazzateGiocatore1==0)
             {
                 alert("Devi posizionare tutte le barche prima di poter giocare");
             }
-    } else if(BarchePiazzate == 5 ){
+    } else if(barchePiazzateGiocatore1 == 5 ){
         
         document.getElementById("ingame").disabled = false;
         document.getElementById("ingame").onclick = function () {
@@ -131,11 +134,20 @@ function dropHandler(ev) {
             targetCell.classList.add("occupateGiocatore1");
         }
     }
-
+    if(chipiazza%2==0)
+        {
     boat.style.display = "none";
-    BarchePiazzate += 1;
+    barchePiazzateGiocatore1 += 1;
     Campo();
-    alert("Barche piazzate: " + BarchePiazzate);
+    alert("Barche piazzate: " + barchePiazzateGiocatore1);
+        }
+    else if(chipiazza%2==1)
+        {
+    boat.style.display = "none";
+    barchePiazzateGiocatore2 += 1;
+    Campo();
+    alert("Barche piazzate: " + barchePiazzateGiocatore2);
+        }
 }
 
 document.addEventListener("wheel", (event) => {
@@ -149,13 +161,21 @@ document.addEventListener("wheel", (event) => {
 function inizializzaCelle() {
     const celle = document.querySelectorAll("td");
     celle.forEach(cell => {
+        if(chipiazza%2==0)
+            {
         cell.classList.add("libereGiocatore1");
         cell.classList.remove("occupateGiocatore1");
+            }
+        else if(chipiazza%2==1)
+            {
+        cell.classList.add("libereGiocatore2");
+        cell.classList.remove("occupateGiocatore2");
+            }
     });
 }
 
 
-// ——— NUOVA FUNZIONE: Controllo celle cliccate ———
+// ——— NUOVA FUNZIONE: Controllo celle cliccate ——— nel caso sia il giocatore 2 a cliccare sulle celle
 function controllaCellaCliccata(event) {
     const cella = event.target.closest('td,th');
     if (!cella) return;
@@ -210,11 +230,31 @@ function controllaCellaCliccata(event) {
         alert(`la casella ${posizione} è vuota.`);
     }
 }
-
+function visualizzacontrochigiochi()
+{
+        if(giocacon==1)
+            {
+                document.getElementById("iconagiocatore2").style.display="inline";
+                document.getElementById("iconabot").style.dispaya="none";
+            }
+        else if(giocacon==2)
+            {
+                document.getElementById("iconabot").style.display="inline";
+                document.getElementById("iconagiocatore2").style.display="none";
+            }
+}
+function giocaconlamico()
+{
+    giocacon=1;
+}
+function giocabot()
+{
+    giocacon=2;
+}
 // ——— Inizializzazione al caricamento della pagina ———
 document.addEventListener("DOMContentLoaded", function () {
     inizializzaCelle();
-
+    visualizzacontrochigiochi();
     // Assegna l'evento di click a tutte le celle
     document.querySelectorAll("td,th").forEach(td => {
         td.addEventListener("click", controllaCellaCliccata);
