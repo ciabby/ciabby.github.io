@@ -1,5 +1,5 @@
 let contatore = parseInt(0);
-let giocacon = parseInt(2); //variabile usata per capire con chi gioca
+let giocacon = parseInt(0); //variabile usata per capire con chi gioca
 let chipiazza = parseInt(0); //variabile usata per decidere chi piazza
 let barchePiazzateGiocatore1 = parseInt(0);
 let barchePiazzateGiocatore2 = parseInt(0);
