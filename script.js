@@ -235,7 +235,7 @@ function visualizzacontrochigiochi()
         if(giocacon==1)
             {
                 document.getElementById("iconagiocatore2").style.display="inline";
-                document.getElementById("iconabot").style.dispaya="none";
+                document.getElementById("iconabot").style.dispay="none";
             }
         else if(giocacon==2)
             {
