@@ -69,17 +69,19 @@ function controllaCellaCliccata(event) {
     } else {
         alert(`la casella ${posizione} è vuota.`);
     }
+    document.getElementById("barchebot").style.content=barchePiazzateGiocatore2;
+    ocument.getElementById("barcheplayer2").style.content=barchePiazzateGiocatore2;
+    ocument.getElementById("barcheplayer1").style.content=barchePiazzateGiocatore1;
 }
 //fine funzione di controllo celle cliccate
-
 
 //metodo che avvia le funzioni al caricamento della pagina
 document.addEventListener("DOMContentLoaded", function () {
     
         visualizzacontrochigiochi();
     
-    
         document.querySelectorAll("td,th").forEach(td => {
         td.addEventListener("click", controllaCellaCliccata);
     });
 });
+
