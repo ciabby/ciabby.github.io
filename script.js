@@ -243,7 +243,7 @@ function visualizzacontrochigiochi()
                 document.getElementById("iconagiocatore2").style.display="none";
             }
 }
-function giocaconlamico()
+function giocaamico()
 {
     giocacon=1;
 }
